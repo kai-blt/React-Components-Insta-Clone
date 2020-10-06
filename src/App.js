@@ -19,7 +19,6 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   const [posts, setPosts] = useState(dummyData);
   const [searchTerm, setSearchTerm] = useState('');
-  let st = ''
 
   /*
     This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -45,17 +44,25 @@ const App = () => {
 
   /*Filter function used on the search bar*/
   const filter = (event) => {
-    //Set the search term to the users input    
-    setSearchTerm(event.target.value);  
+    //Set the search term to the users input changed to lowercase!
+    setSearchTerm(event.target.value.toLowerCase());     
+  }
+
+  useEffect(() => {
+     //If the search field is empty, re-render all posts
+     if (searchTerm === '') {
+      setPosts(dummyData);
+    }
     
-    //Filter the posts to only display posts where the username equals the search term. Otherwise log an error
+    /*Filter the posts to only display posts where the username
+    (in lowercase for easier checking) equals the search term. Otherwise log an error*/
     posts.filter(post => {  
-      if (post.username === searchTerm){ 
+      if (post.username.toLocaleLowerCase() === searchTerm){ 
         return setPosts([post]);
-      }
+      } 
       return console.log('No search results found!');
     });   
-  }
+  }, [searchTerm])
 
   return (
     <div className='App'>
