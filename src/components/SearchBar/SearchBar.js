@@ -13,7 +13,7 @@ const SearchBar = (props) => {
         <FontAwesomeIcon icon={faInstagram} />
       </div>
       <form className="search-form">
-        <input type="text" placeholder="Search" onChange={(event) => filterPosts(event)}/>
+        <input type="text" placeholder="Search" onKeyUp={(event) => filterPosts(event)}/>
       </form>
       <div className="social-wrapper">
         <div className="social">
