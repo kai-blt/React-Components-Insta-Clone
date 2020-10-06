@@ -52,8 +52,7 @@ const App = () => {
      //If the search field is empty, re-render all posts
      if (searchTerm === '') {
       setPosts(dummyData);
-    }
-    
+    }    
     /*Filter the posts to only display posts where the username
     (in lowercase for easier checking) equals the search term. Otherwise log an error*/
     posts.filter(post => {  
@@ -62,16 +61,15 @@ const App = () => {
       } 
       return console.log('No search results found!');
     });   
-  }, [searchTerm])
+  }, [searchTerm]);
 
+  //Render components
   return (
     <div className='App'>
       <>
         <SearchBar filterPosts={filter}/>
         <Posts likePost={likePost} posts={posts} />
-      </>      
-      {/*Add SearchBar and Posts here to render them*/}
-      {/*Check the implementation of each component, to see what props they require, if any! */}
+      </>  
     </div>
   );
 };
