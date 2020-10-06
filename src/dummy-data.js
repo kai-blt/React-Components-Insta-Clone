@@ -54,6 +54,56 @@ const dummyData = [
             },
         ],
     },
+    {
+        id: 3,
+        username: "Spotify",
+        thumbnailUrl: 'https://icon2.cleanpng.com/20180320/sqe/kisspng-twitch-computer-icons-streaming-media-youtube-live-tv-twitch-icon-5ab19172461392.001176751521586546287.jpg',
+        imageUrl: 'https://images.unsplash.com/photo-1532354058425-ba7ccc7e4a24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+        likes: 40000000,
+        timestamp: "July 17th 2017, 12:42:40 pm",
+        comments: [
+            {
+                id: 42,
+                username: "music lover",
+                text: "Gimme that music!",
+            },
+            {
+                id: 43,
+                username: "tester",
+                text: "testing my test account... hopfully they remove this",
+            },
+            {
+                id: 44,
+                username: "johnny$",
+                text: "Rings of Fire",
+            },
+        ],
+    },
+    {
+        id: 4,
+        username: "Newegg",
+        thumbnailUrl: 'https://icon2.cleanpng.com/20180320/sqe/kisspng-twitch-computer-icons-streaming-media-youtube-live-tv-twitch-icon-5ab19172461392.001176751521586546287.jpg',
+        imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+        likes: 820,
+        timestamp: "July 17th 2017, 12:42:40 pm",
+        comments: [
+            {
+                id: 52,
+                username: "tech4free",
+                text: "I want your techs for free",
+            },
+            {
+                id: 53,
+                username: "notAnotherCommenter",
+                text: "sigh... more comments",
+            },
+            {
+                id: 54,
+                username: "newGuy",
+                text: "This listing looks fabulous!",
+            },
+        ],
+    },
 ];
 
 export default dummyData;

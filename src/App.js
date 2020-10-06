@@ -5,7 +5,7 @@
 */
 
 // Import the state hook
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Import the dummyData
 // import  './App.css';
@@ -18,7 +18,8 @@ const App = () => {
   // This state is the source of truth for the data inside the app. You won't be needing dummyData anymore.
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   const [posts, setPosts] = useState(dummyData);
-  const [searchTerm, setSearchTerm] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  let st = ''
 
   /*
     This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -44,16 +45,12 @@ const App = () => {
 
   /*Filter function used on the search bar*/
   const filter = (event) => {
-    //Set the search term to the users input
-    if (searchTerm === null) {
-      setSearchTerm(event.target.value);
-    } else {
-      setSearchTerm(event.target.value);
-    }
+    //Set the search term to the users input    
+    setSearchTerm(event.target.value);  
     
     //Filter the posts to only display posts where the username equals the search term. Otherwise log an error
-    posts.filter(post => {
-      if (post.username === searchTerm){
+    posts.filter(post => {  
+      if (post.username === searchTerm){ 
         return setPosts([post]);
       }
       return console.log('No search results found!');

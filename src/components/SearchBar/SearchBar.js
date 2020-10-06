@@ -7,6 +7,7 @@ import "./SearchBar.css";
 
 const SearchBar = (props) => {
   const { filterPosts } = props;
+
   return (
     <div className="search-bar-wrapper">
       <div className="social">
